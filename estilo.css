@@ -28,52 +28,45 @@ body{
       color: white;
     }
     #juego{
-        background: rgba(255,255,255,0.5);
-        text-align: center;
-        padding: 20px;
-        margin-top: 60px;
-
-        border: 2px solid black;
-        border-radius: 80px;
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border: 2px solid black;
+    border-radius: 80px;
     }
     #juego p{
-        font-size: 25px;
+    font-size: 25px;
     }
     #tematica{
 
     background: rgba(255,255,255,0.5);
-        text-align: center;
-        padding: 20px;
-  
-        margin-top: 60px;
-
-        border: 2px solid black;
-        border-radius: 80px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border: 2px solid black;
+    border-radius: 80px;
     }
     #tematica p{
-        font-size: 25px;
+     font-size: 25px;
     }
     #preguntas{
-        background: rgba(255,255,255,0.5);
-        text-align: center;
-        padding: 20px;
-
-        margin-top: 60px;
-   
-        border: 2px solid black;
-        border-radius: 80px;
-        font-size: 25px;
+     background: rgba(255,255,255,0.5);
+     text-align: center;
+     padding: 20px;
+     margin-top: 60px;
+     border: 2px solid black;
+     border-radius: 80px;
+     font-size: 25px;
 
     }
     #participacion{
-        background: rgba(255,255,255,0.5);
-        text-align: center;
-        padding: 20px;
-
-        margin-top: 60px;
-    
-        border: 2px solid black;
-        border-radius: 80px;
+     background: rgba(255,255,255,0.5);
+     text-align: center;
+     padding: 20px;
+     margin-top: 60px;
+     border: 2px solid black;
+     border-radius: 80px;
 }
 
 #participacion h3{
@@ -81,4 +74,40 @@ body{
 }
 #participacion p{
     font-size: 30px;
+}
+#conciencia{
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border: 2px solid black;
+    border-radius: 80px;
+    font-size: 25px;
+}
+#sugerir{
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border: 2px solid black;
+    border-radius: 80px;
+    font-size: 25px;
+}
+#puntos{
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border: 2px solid black;
+    border-radius: 80px;
+    font-size: 25px;
+}
+#amigos{
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border: 2px solid black;
+    border-radius: 80px;
+    font-size: 25px;
 }
