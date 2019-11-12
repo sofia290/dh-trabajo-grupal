@@ -1,8 +1,12 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+?>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
@@ -10,7 +14,7 @@
   </head>
   <body>
  <?php
-  required_once('header.php');
+  require_once('header.php');
   ?>
     <section class="row">
     <div class="  col-md-12" >
@@ -21,13 +25,13 @@
        <p id="titu">Bienvenido a Ecopreguntas , esperamos que te diviertas probando tus conociminetos sobre la ecología.</p>
      </div>
    <div id="botones">
-     <button type="button" class="btn btn-success">Iniciar sesión</button>
-      <button type="button" class="btn btn-success">Registrarse</button>
+     <a role="button" class="btn btn-success m-3" href="login.php">Iniciar sesión</a>
+      <a role="button" class="btn btn-success m-3" href="registro.php">Registrarse</a>
    </div>
 
    </div>
     </section>
-    <footer >
+    <footer id="footer">
    <form class="row" action="index.html" method="post">
  <div class="offset-md-4 col-md-4 offset-sm-2 col-sm-8" >
      <p>¿Quieres hacernos una consulta? <br> ¿Pasabas por aquí y te apetece saludar?¡Pues no te cortes! Mándanos un correo y te responderé a la velocidad del rayo!  </p>

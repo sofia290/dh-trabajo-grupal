@@ -24,17 +24,17 @@
    color: white;
  }
 footer{
-   width: 100%;
-   position: absolute;
-    bottom: 0px;
+   /*width: 100%;
+   /*position: absolute;
+    bottom: 0px;*/
 
  }
- form{
+ footer form{
    background: rgba(0, 0, 0, 0.4);
    box-sizing: border-box;
 
  }
- p{
+ #footer p{
    color: #fff;
    text-align: center;
    margin: 0;

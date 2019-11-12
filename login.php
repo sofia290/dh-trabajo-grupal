@@ -71,7 +71,7 @@ if($_POST){
         <div class="row mt-3">
             <div class="col-12 col-lg-4 offset-lg-4 flexbox">
                 <h1 class="text-center">Inicia sesión</h1>
-                <p> ¿No tenes cuenta? <a href="registro.html">Registrate aca </a></p>
+                <p> ¿No tenes cuenta? <a href="registro.php">Registrate aca </a></p>
             </div>
         </div>
         <div class="row">
