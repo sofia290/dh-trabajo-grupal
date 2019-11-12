@@ -65,7 +65,7 @@ if($_POST){
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 	<?php
-		include_once("header.php"); 
+		include("header.php"); 
 	?>
     <div class="container-fluid"> <!-- Aca empieza el formulario -->
         <div class="row mt-3">
