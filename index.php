@@ -14,7 +14,7 @@
   </head>
   <body>
  <?php
-  require_once('header.php');
+  include('header.php');
   ?>
     <section class="row">
     <div class="  col-md-12" >
