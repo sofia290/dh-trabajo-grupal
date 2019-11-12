@@ -10,7 +10,7 @@
 </head>
 <body>
           <?php
-   required_once('header.php');
+   include('header.php');
    ?>
       <div class="container">
       <div id="juego"  class="row">
