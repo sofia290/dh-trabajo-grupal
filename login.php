@@ -46,12 +46,13 @@ if($_POST){
                 exit;
             }
         }
-        if($_POST["recordarme"]){
+        if(isset($_POST["recordarme"])){
           setcookie("usuario", $usuario["nombre"]);
           //var_dump($_COOKIE);
         }
+        
     }
-            $errorChequear = "El usuario y/o la contraseña son invalidos";
+        $errorChequear = "El usuario y/o la contraseña son invalidos";
         $usuarioEscrito = $_POST["email"];
     }
  
@@ -107,7 +108,7 @@ if($_POST){
                     <p style="color:red;"><?=$errorPassword?></p>
                   </div>
                   <div class="form-group">
-                      <input name="recordarme" type="checkbox"> Recordarme
+                      <input name="recordarme" type="checkbox"> <span> Recordarme </span>
                   </div>
                   <div class="form-group">
                     <button name="submit" type="submit" class="btn btn-success btn-lg btn-block">Iniciar sesion </button>
