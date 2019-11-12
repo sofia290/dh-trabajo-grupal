@@ -40,10 +40,15 @@ if($_POST){
         		//pregunto si machea la contraseña
         		if( password_verify($_POST["password"],$usuario["password"])){
                //le doy la bienvenida
-    						header("Location:index.php");
+                header("Location:index.php");
+                $_SESSION["usuario"] = $usuario["nombre"];
                 //echo "<img src='".$usuario["avatar"]."'>";
                 exit;
             }
+        }
+        if($_POST["recordarme"]){
+          setcookie("usuario", $usuario["nombre"]);
+          //var_dump($_COOKIE);
         }
     }
             $errorChequear = "El usuario y/o la contraseña son invalidos";
