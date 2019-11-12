@@ -1,4 +1,42 @@
 <!DOCTYPE html>
+<?php
+if($_POST){
+    var_dump($_FILES);
+    //validacion
+    $errores = false;
+
+    if(!$errores){
+        $name = $_FILES['foto_perfil']['name'];
+        $ext = pathinfo($name, PATHINFO_EXTENSION);
+        //creo un usuario como array
+        $nuevoUsuario = [
+            "nombre" => $_POST["nombre"],
+            "apellido"=>$_POST["apellido"],
+            "email" => $_POST["email"],
+            "fecha-de-nacimiento" =>$_POST["fecha-de-nacimiento"],
+            "username"=>$_POST["username"],
+            "contrasenia" => password_hash($_POST["password"],PASSWORD_DEFAULT)
+            //"contrasenia" => md5($_POST["password"])
+        ];
+        //traerme la base de datos
+        $usuariosEnJSON = file_get_contents("usuarios.json");
+        //convertir a php el json
+        $usuariosEnPHP = json_decode($usuariosEnJSON,true);
+        //agregarle el nuevo usuario al array de la base de datos
+        $usuariosEnPHP[] = $nuevoUsuario;
+        //convertir la base completa a json
+        $usuariosEnJSON = json_encode($usuariosEnPHP);
+        //sobreescribir el json
+        file_put_contents("usuarios.json",$usuariosEnJSON);
+        move_uploaded_file($_FILES["foto_perfil"]["tmp_name"], "avatars/".$_POST["email"].".".$ext);
+
+    }
+
+
+
+}
+?>
+
 <html lang="es">
 <head>
     <meta charset="utf-8">
