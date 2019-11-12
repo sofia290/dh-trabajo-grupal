@@ -111,3 +111,43 @@ body{
     border-radius: 80px;
     font-size: 25px;
 }
+footer{
+  width: 100%;
+  position: absolute;
+   bottom: 0px;
+
+}
+form{
+  background: rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+
+}
+#textform{
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+input {
+width: 100%;
+}
+
+textarea{
+  width: 100%;
+  min-height: 100px;
+  max-height: 200px;
+ max-width: 100%;
+}
+#boton{
+  background-color: #28a745;
+  border-color: #28a745;
+ color: white;
+}
+
+#boton:hover{
+  background-color:#2f9045;
+   border-color:#2f9045;
+  cursor: pointer;
+}
