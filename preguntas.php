@@ -9,17 +9,9 @@
     <title>Document</title>
 </head>
 <body>
-        <header>
-            </div>
-            <nav id="menu">
-                  <ul>
-                    <li><a href="#">home </a></li>
-                    <li><a href="#">Preguntas frecuentes</a></li>
-                    <li><a href="#">login</a></li>
-                    <button type="submit" >Registrate</button>
-                  </ul>
-              </nav>
-      </header>
+          <?php
+   required_once('header.php');
+   ?>
       <div class="container">
       <div id="juego"  class="row">
         <div class="offset-md-2 col-md-8" >
@@ -67,6 +59,16 @@
       <p>Queremos que la gente tome conciencia sobre las problematicas que hay en el mundo,  asi aprender y ayudar a mejorar el medioambiente. <u>Tu granito de arena ayuda al planeta y animales.</u>  </p>
     </div>
   </div>
-
+<footer >
+  <form class="row" action="index.html" method="post">
+  <div class="offset-md-4 col-md-4 offset-sm-2 col-sm-8" >
+   <p id="textform">¿Quieres hacernos una consulta? <br> ¿Pasabas por aquí y te apetece saludar?¡Pues no te cortes! Mándanos un correo y te responderé a la velocidad del rayo!  </p>
+   <input type="text" name="nombre" placeholder="Nombre" value=""  required>
+   <input type="text" name="correo" placeholder="Correo" value="" required>
+   <textarea name="mensaje" placeholder="Escriba aquí su mensaje" required></textarea>
+   <input type="button"  value="Enviar" id="boton">
+    </div>
+  </form>
+  </footer>
 </body>
 </html>
