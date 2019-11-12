@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <?php
+session_start();
+//si existe el indice "usuario" como cookie
+//si el usuario tiene la sesion abierta
+if(isset($_COOKIE["usuario"]) || isset($_SESSION["usuario"])){
+    header("Location:index.php");
+    
+}
 if($_POST){
     var_dump($_FILES);
     //validacion
