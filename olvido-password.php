@@ -12,23 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="row"  id="menu">
-			<div class="col">
-        <header>
-            </div>
-            <nav>
-                  <ul>
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="preguntas.html">Preguntas frecuentes</a></li>
-                    <li><a href="registro.html">Registrate </a></li>
-                    <li><a href="login.html"> Inicia sesión </a></li>
-                  </ul>
-              </nav>
-      </header>
-    </div>
-		</div>
-	</div>
+	<?php
+	 include ('header.php')
+	?>
 	<div class="container-fluid"> <!-- Aca empieza el formulario -->
 		<div class="row mt-3">
 			<div class="col-12 col-lg-4 offset-lg-4 flexbox">
