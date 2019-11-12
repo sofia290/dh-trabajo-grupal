@@ -42,13 +42,6 @@
       </div>
    </form>
 </footer>
-     <?php 
-   $destino= "romerosofia290@gmail.com"
-   $nombre = $_POST ["nombre"];
-   $nombre = $_POST ["correo"];
-   $nombre = $_POST ["mensaje"];
-   $contenido= "nobre :" . $nombre. "/nCorreo". "/nMensaje:" . $mensaje:
-   mail ($destino, "Contacto", $contenido)
-    ?>
+    
   </body>
 </html>
