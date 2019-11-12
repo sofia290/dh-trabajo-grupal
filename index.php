@@ -18,7 +18,7 @@
   ?>
     <section class="row">
     <div class="  col-md-12" >
-      <img src="imagenes/imagenecopreg.png" alt="">
+      <img src="tres.png" alt="">
     </div>
    <div class="col-md-12">
      <div id="titulo">
