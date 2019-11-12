@@ -22,17 +22,27 @@
     </div>
    <div class="col-md-12">
      <div id="titulo">
-       <p id="titu">Bienvenido a Ecopreguntas , esperamos que te diviertas probando tus conociminetos sobre la ecología.</p>
+       <p id="titu">Bienvenido a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
      </div>
    <div id="botones">
-     <a role="button" class="btn btn-success m-3" href="login.php">Iniciar sesión</a>
+      <?php
+        if(isset($_SESSION["usuario"])){
+          ?>
+          <p> Bienvenido <br></p> <?=$_SESSION["usuario"]?>
+          <?php };
+        if(isset($_SESSION["usuario"])==null){
+          ?>
+          <a role="button" class="btn btn-success m-3" href="login.php">Iniciar sesión</a>
       <a role="button" class="btn btn-success m-3" href="registro.php">Registrarse</a>
+        <?php 
+        };
+      ?>
    </div>
 
    </div>
     </section>
     <footer id="footer">
-   <form class="row" method="post">
+   <form class="row" action="index.html" method="post">
  <div class="offset-md-4 col-md-4 offset-sm-2 col-sm-8" >
      <p>¿Quieres hacernos una consulta? <br> ¿Pasabas por aquí y te apetece saludar?¡Pues no te cortes! Mándanos un correo y te responderé a la velocidad del rayo!  </p>
      <input type="text" name="nombre" placeholder="Nombre" value=""  required>
@@ -42,6 +52,5 @@
       </div>
    </form>
 </footer>
-    
   </body>
 </html>
