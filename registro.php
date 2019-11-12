@@ -50,7 +50,7 @@ if($_POST){
 </head>
 <body>
 	<?php 
-		require_once('header.php');
+		include('header.php');
 	?>
 	<div class="container"> <!-- Aca empieza el formulario -->
 		<div class="row mt-3">
