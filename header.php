@@ -10,7 +10,7 @@
   if(isset($_SESSION["usuario"])==null){
     ?>
     <li><a href="registro.php"> Registrate </a></li>
-    <li><a href="registro.php"> Inicia sesión </a></li>
+    <li><a href="login.php"> Inicia sesión </a></li>
   <?php 
   };
   if(isset($_SESSION["usuario"])){
