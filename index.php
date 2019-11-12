@@ -32,7 +32,7 @@
    </div>
     </section>
     <footer id="footer">
-   <form class="row" action="index.html" method="post">
+   <form class="row" method="post">
  <div class="offset-md-4 col-md-4 offset-sm-2 col-sm-8" >
      <p>¿Quieres hacernos una consulta? <br> ¿Pasabas por aquí y te apetece saludar?¡Pues no te cortes! Mándanos un correo y te responderé a la velocidad del rayo!  </p>
      <input type="text" name="nombre" placeholder="Nombre" value=""  required>
@@ -42,5 +42,13 @@
       </div>
    </form>
 </footer>
+     <?php 
+   $destino= "romerosofia290@gmail.com"
+   $nombre = $_POST ["nombre"];
+   $nombre = $_POST ["correo"];
+   $nombre = $_POST ["mensaje"];
+   $contenido= "nobre :" . $nombre. "/nCorreo". "/nMensaje:" . $mensaje:
+   mail ($destino, "Contacto", $contenido)
+    ?>
   </body>
 </html>
