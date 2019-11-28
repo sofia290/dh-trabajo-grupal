@@ -1,121 +1,95 @@
 body{
-    background-color: green;
-    margin: 0;
-    padding: 0;
+  background-color: green;
+  margin: 0;
+  padding: 0;
 }
-#menu{
-    background-color: white;
-   }
-   
-   #menu ul{
-     display: flex;
-     justify-content: flex-end;
-   }
-   
-   #menu li {
-    display: inline;
-    padding: 20px;
-    }
-   
-    #menu li a {
-    color: black;
-     text-decoration: none;
-     }
-   
-    #menu li :hover {
-      padding: inherit;
-      background: green;
-      color: white;
-    }
-    #juego{
-    background: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-    border: 2px solid black;
-    border-radius: 80px;
-    }
-    #juego p{
-    font-size: 25px;
-    }
-    #tematica{
 
-    background: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-    border: 2px solid black;
-    border-radius: 80px;
-    }
-    #tematica p{
-     font-size: 25px;
-    }
-    #preguntas{
-     background: rgba(255,255,255,0.5);
-     text-align: center;
-     padding: 20px;
-     margin-top: 60px;
-     border: 2px solid black;
-     border-radius: 80px;
-     font-size: 25px;
+#juego{
+  background: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  border: 2px solid black;
+  border-radius: 80px;
+}
+#juego p{
+  font-size: 25px;
+}
+#tematica{
 
-    }
-    #participacion{
-     background: rgba(255,255,255,0.5);
-     text-align: center;
-     padding: 20px;
-     margin-top: 60px;
-     border: 2px solid black;
-     border-radius: 80px;
+  background: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  border: 2px solid black;
+  border-radius: 80px;
+}
+#tematica p{
+  font-size: 25px;
+}
+#preguntas{
+  background: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  border: 2px solid black;
+  border-radius: 80px;
+  font-size: 25px;
+
+}
+#participacion{
+  background: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  border: 2px solid black;
+  border-radius: 80px;
 }
 
 #participacion h3{
-    font-size: 30px;
+  font-size: 30px;
 }
 #participacion p{
-    font-size: 30px;
+  font-size: 30px;
 }
 #conciencia{
-    background: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-    border: 2px solid black;
-    border-radius: 80px;
-    font-size: 25px;
+  background: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  border: 2px solid black;
+  border-radius: 80px;
+  font-size: 25px;
 }
 #sugerir{
-    background: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-    border: 2px solid black;
-    border-radius: 80px;
-    font-size: 25px;
+  background: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  border: 2px solid black;
+  border-radius: 80px;
+  font-size: 25px;
 }
 #puntos{
-    background: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-    border: 2px solid black;
-    border-radius: 80px;
-    font-size: 25px;
+  background: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  border: 2px solid black;
+  border-radius: 80px;
+  font-size: 25px;
 }
 #amigos{
-    background: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-    border: 2px solid black;
-    border-radius: 80px;
-    font-size: 25px;
+  background: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  border: 2px solid black;
+  border-radius: 80px;
+  font-size: 25px;
 }
-footer{
-  width: 100%;
-    padding-top: 15px;
 
-}
+
 form{
   background: rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
@@ -130,23 +104,23 @@ form{
 }
 
 input {
-width: 100%;
+  width: 100%;
 }
 
 textarea{
   width: 100%;
   min-height: 100px;
   max-height: 200px;
- max-width: 100%;
+  max-width: 100%;
 }
 #boton{
   background-color: #28a745;
   border-color: #28a745;
- color: white;
+  color: white;
 }
 
 #boton:hover{
   background-color:#2f9045;
-   border-color:#2f9045;
+  border-color:#2f9045;
   cursor: pointer;
 }

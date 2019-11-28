@@ -29,8 +29,8 @@ footer{
     bottom: 0px;*/
 
  }
- footer form{
-   background: rgba(0, 0, 0, 0.4);
+ #footer{
+   background-color: rgba(0, 0, 0, 0.4);
    box-sizing: border-box;
 
  }

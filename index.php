@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <?php
-  session_start();
+session_start();
 ?>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
-    <title></title>
-  </head>
-  <body>
- <?php
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
+  <title></title>
+</head>
+<body>
+  <?php
   include('header.php');
   ?>
-    <section class="row">
-    <div class="  col-md-12" >
-      <img src="tres.png" alt="">
-    </div>
-   <div class="col-md-12">
-     <div id="titulo">
-       <p id="titu">Bienvenido a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
-     </div>
-   <div id="botones">
-      <?php
-        if(isset($_SESSION["usuario"])){
-          ?>
-          <p> Bienvenido <br></p> <?=$_SESSION["usuario"]?>
-          <?php };
-        if(isset($_SESSION["usuario"])==null){
-          ?>
-          <a role="button" class="btn btn-success m-3" href="login.php">Iniciar sesión</a>
-      <a role="button" class="btn btn-success m-3" href="registro.php">Registrarse</a>
-        <?php 
-        };
-      ?>
-   </div>
-
-   </div>
-    </section>
-    <footer id="footer">
-   <form class="row" action="index.html" method="post">
- <div class="offset-md-4 col-md-4 offset-sm-2 col-sm-8" >
-     <p>¿Quieres hacernos una consulta? <br> ¿Pasabas por aquí y te apetece saludar?¡Pues no te cortes! Mándanos un correo y te responderé a la velocidad del rayo!  </p>
-     <input type="text" name="nombre" placeholder="Nombre" value=""  required>
-     <input type="text" name="correo" placeholder="Correo" value="" required>
-     <textarea name="mensaje" placeholder="Escriba aquí su mensaje" required></textarea>
-     <input type="button"  value="Enviar" id="boton">
+  <div class="container-fluid">
+    <section>
+      <div class="row">
+        <div class="col-md-12" >
+          <img src="tres.png" alt="">
+        </div>
       </div>
-   </form>
-</footer>
-  </body>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="titulo">
+            <?php
+            if(isset($_SESSION["usuario"])){
+              ?>
+              <p class="text-center">Bienvenido/a  <?=$_SESSION["usuario"]?> a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
+            <?php };
+            if(isset($_SESSION["usuario"])==null){
+              ?>
+              <p class="text-center">Bienvenido/a a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
+              <?php
+            };?>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="botones">
+            <?php
+            if(isset($_SESSION["usuario"])==null){
+              ?>
+              <a role="button" class="btn btn-success m-3" href="login.php">Iniciar sesión</a>
+              <a role="button" class="btn btn-success m-3" href="registro.php">Registrarse</a>
+              <?php
+            };
+            ?>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <?php require_once 'footer.php'; ?>
+</body>
 </html>
