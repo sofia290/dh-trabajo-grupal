@@ -13,17 +13,17 @@ if($_POST){
   $errores = false;
 
   if(!$errores){
-    //$name = $_FILES['foto_perfil']['name'];
-    //$ext = pathinfo($name, PATHINFO_EXTENSION);
+    $name = $_FILES['foto_perfil']['name'];
+    $ext = pathinfo($name, PATHINFO_EXTENSION);
     //creo un usuario como array
     $nuevoUsuario = [
       "nombre" => $_POST["nombre"],
       "apellido"=>$_POST["apellido"],
       "email" => $_POST["email"],
+      "avatar" => "avatars/". $_POST["email"]. "." . $ext,
       "fecha-de-nacimiento" =>$_POST["fecha-de-nacimiento"],
       "username"=>$_POST["username"],
       "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
-      //"contrasenia" => md5($_POST["password"])
     ];
     //traerme la base de datos
     $usuariosEnJSON = file_get_contents("usuarios.json");
@@ -35,7 +35,7 @@ if($_POST){
     $usuariosEnJSON = json_encode($usuariosEnPHP);
     //sobreescribir el json
     file_put_contents("usuarios.json",$usuariosEnJSON);
-    //move_uploaded_file($_FILES["foto_perfil"]["tmp_name"], "avatars/".$_POST["email"].".".$ext);
+    move_uploaded_file($_FILES["foto_perfil"]["tmp_name"], "avatars/".$_POST["email"].".".$ext);
 
   }
 
@@ -68,7 +68,7 @@ if($_POST){
     </div>
     <div class="row">
       <div class="col-12 col-lg-8 offset-lg-2">
-        <form method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <label for="nombre"> Nombre * </label>
             <div class="input-group">
@@ -100,6 +100,17 @@ if($_POST){
                 </div>
               </div>
               <input id="email" name="email" placeholder="Introduzca su correo electrónico" type="email" required="required" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email"> Foto de perfil </label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-at"></i>
+                </div>
+              </div>
+              <input type="file" name="foto_perfil">
             </div>
           </div>
           <div class="form-group">

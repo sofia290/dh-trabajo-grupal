@@ -5,7 +5,7 @@ session_start();
 //si el usuario tiene la sesion abierta
 if(isset($_COOKIE["usuario"]) || isset($_SESSION["usuario"])){
     header("Location:index.php");
-    
+
 }
 
 $errorMail = "";
@@ -48,14 +48,15 @@ if($_POST){
         }
         if(isset($_POST["recordarme"])){
           setcookie("usuario", $usuario["nombre"]);
+          header(Location:index.php);
           //var_dump($_COOKIE);
         }
-        
+
     }
         $errorChequear = "El usuario y/o la contraseña son invalidos";
         $usuarioEscrito = $_POST["email"];
     }
- 
+
     }
 ?>
 <!DOCTYPE html>
@@ -71,7 +72,7 @@ if($_POST){
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 	<?php
-		include("header.php"); 
+		include("header.php");
 	?>
     <div class="container-fluid"> <!-- Aca empieza el formulario -->
         <div class="row mt-3">
