@@ -14,6 +14,7 @@ class BD{
     }
 
   public function registrarUsuario( Usuario $usuario){
+
     $nombre = $usuario->getNombre();
     $apellido = $usuario->getApellido();
     $email = $usuario->getEmail();
@@ -21,23 +22,25 @@ class BD{
     $fecha = $usuario->getFechaDeNac();
     $username = $usuario->getUsername();
 
-    /*$consulta = $this->con->prepare("INSERT INTO usuarios (id, nombre, apellido, password, email, fecha_de_nac, username) VALUES (null, :nombre, :apellido, :password, :email, :fecha, :username)");*/
+    $consulta = $this->con->prepare("INSERT INTO usuarios (id, nombre, apellido, password, email, fecha_de_nac, username) VALUES (null, :nombre, :apellido, :password, :email,:fecha, :username)");
 
-    /*$consulta->bindValue(":nombre", '"'.$nombre . '"');
-    $consulta->bindValue(":apellido",'"'.$apellido . '"');
-    $consulta->bindValue(":password", '"'. $password .'"');
-    $consulta->bindValue(":email", '"'.$email.'"');
-    $consulta->bindValue(":fecha", '"'. $fecha . '"');
-    $consulta->bindValue(":userman", '"' . $username . '"');*/
-    
-    
-    /*$consulta = $this->con->prepare("INSERT INTO usuarios (id, nombre, apellido, password, email, fecha_de_nac, username) VALUES (null, '".$nombre."', '".$apellido."', '".$password."', '".$email."','".$fecha"', '".$username."')");*/
+    $consulta->bindValue('nombre', $nombre);
+    $consulta->bindValue('apellido', $apellido);
+    $consulta->bindValue('password', $password);
+    $consulta->bindValue('email', $email);
+    $consulta->bindValue('fecha', $fecha);
+    $consulta->bindValue('username', $username);
+
+    /*$consulta = $this->con->prepare("INSERT INTO usuarios (id, nombre, apellido, password, email, fecha_de_nac, username) VALUES (null, $nombre, $apellido, $password, $email, $fecha, $username)");*/
     /*$consulta->bindValue('nombre', ".$usuario->getNombre()." );
     $consulta->bindValue('apellido', ".$usuario->getApellido()." );
     $consulta->bindValue('password', ".$usuario->getPassword()." );
     $consulta->bindValue('email', ".$usuario->getEmail()." );
     $consulta->bindValue('fecha', ".$usuario->getFechaDeNac()." );
     $consulta->bindValue('username', ".$usuario->getUsername()." );*/
+
+
+
     $consulta->execute();
     var_dump($usuario);
   }
