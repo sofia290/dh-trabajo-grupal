@@ -15,6 +15,8 @@ session_start();
   <title>Preguntas frequentes</title>
 </head>
 <body>
+<div id="page-container">
+<div id="content-wrap">
   <?php
   include('header.php');
   ?>
@@ -81,5 +83,7 @@ session_start();
     </div>
   </form>
 </footer>-->
+</div>
+</div>
 </body>
 </html>
