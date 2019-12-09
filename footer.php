@@ -1,5 +1,5 @@
-<div class="container-fluid" id="footer" style="background:rgba(0, 0, 0, 0.4)">
-  <footer>
+<div class="container-fluid" id="footer" style="background:rgba(14, 103, 30, 1)">
+  <footer style="background:rgba(14, 103, 30, 1)">
     <div class="row">
       <div class="col">
         <p>¿Quieres hacernos una consulta?</p>

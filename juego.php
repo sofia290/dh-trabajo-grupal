@@ -60,8 +60,8 @@ echo "Pregunta 1:<br>";
 echo $pregunta1->texto."<br><br>";
 echo "Respuestas:<br>";
 foreach($pregunta1->respuestas as $respuesta){
-    echo $respuesta->texto;
-    echo "<br>";
+  echo $respuesta->texto;
+  echo "<br>";
 }
 
 $juana->responder($pregunta1,3);

@@ -14,48 +14,52 @@ session_start();
   <title></title>
 </head>
 <body>
-  <?php
-  include('header.php');
-  ?>
-  <div class="container-fluid">
-    <section>
-      <div class="row">
-        <div class="col-md-12" >
-          <img src="tres.png" alt="">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div id="titulo">
-            <?php
-            if(isset($_SESSION["usuario"])){
-              ?>
-              <p class="text-center">Bienvenido/a  <?=$_SESSION["usuario"]?> a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
-            <?php };
-            if(isset($_SESSION["usuario"])==null){
-              ?>
-              <p class="text-center">Bienvenido/a a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
-              <?php
-            };?>
+  <div id="page-container">
+    <div class="content-wrap">
+      <?php
+      include('header.php');
+      ?>
+      <div class="container-fluid">
+        <section>
+          <div class="row">
+            <div class="col-md-12" >
+              <img src="tres.png" alt="">
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div id="botones">
-            <?php
-            if(isset($_SESSION["usuario"])==null){
-              ?>
-              <a role="button" class="btn btn-success m-3" href="login.php">Iniciar sesión</a>
-              <a role="button" class="btn btn-success m-3" href="registro.php">Registrarse</a>
-              <?php
-            };
-            ?>
+          <div class="row">
+            <div class="col-md-12">
+              <div id="titulo">
+                <?php
+                if(isset($_SESSION["usuario"])){
+                  ?>
+                  <p class="text-center">Bienvenido/a  <?=$_SESSION["usuario"]?> a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
+                <?php };
+                if(isset($_SESSION["usuario"])==null){
+                  ?>
+                  <p class="text-center">Bienvenido/a a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
+                  <?php
+                };?>
+              </div>
+            </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col">
+              <div id="botones">
+                <?php
+                if(isset($_SESSION["usuario"])==null){
+                  ?>
+                  <a role="button" class="btn btn-success m-3" href="login.php">Iniciar sesión</a>
+                  <a role="button" class="btn btn-success m-3" href="registro.php">Registrarse</a>
+                  <?php
+                };
+                ?>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
+      <?php require_once 'footer.php'; ?>
+    </div>
   </div>
-  <?php require_once 'footer.php'; ?>
 </body>
 </html>
