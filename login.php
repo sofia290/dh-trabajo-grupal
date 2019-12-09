@@ -74,8 +74,8 @@ if($_POST){
   <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
-  <div id="page-container">
-    <div id="content-wrap">
+  <div class="page-container">
+    <div class="content-wrap">
       <?php
       include("header.php");
       ?>

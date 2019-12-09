@@ -14,7 +14,7 @@ session_start();
   <title></title>
 </head>
 <body>
-  <div id="page-container">
+  <div class="page-container">
     <div class="content-wrap">
       <?php
       include('header.php');

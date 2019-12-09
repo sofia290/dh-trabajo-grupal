@@ -15,8 +15,8 @@ session_start();
   <title>Preguntas frequentes</title>
 </head>
 <body>
-<div id="page-container">
-<div id="content-wrap">
+<div class="page-container">
+<div class="content-wrap">
   <?php
   include('header.php');
   ?>
