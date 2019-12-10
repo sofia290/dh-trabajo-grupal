@@ -10,6 +10,48 @@ $usuario=$bd-> traerUsuario($_SESSION["user_id"]);
 if($_POST){
  include ' clases/Validador.php'
  $validador? new Validador();
+ if($_POST){
+  //include_once 'clases/Usuario.php';
+  include_once 'clases/Validador.php';
+  
+  
+  //validacion
+  $errores = false;
+  $validador = new Validador();
+  $errorNombre = "";
+  $errorApellido = "";
+  $errorEmail = "";
+  $errorFecha = "";
+  $errorUsuario = "";
+  $errorPassword = "";
+  if($validador->estaVacio($_POST["nombre"])){
+    $errorNombre = "El nombre es obligatorio";
+    $errores = true;
+  };
+  if($validador->estaVacio($_POST["apellido"])){
+    $errorApellido = "El apellido es obligatorio";
+    $errores = true;
+  };
+  if($validador->estaVacio($_POST["email"])){
+    $errorEmail = "El email es obligatorio";
+    $errores = true;
+  }
+  if($validador->tieneFormatoEmail($_POST["email"]) == false){
+    $errores = true;
+  }
+  if($validador->estaVacio($_POST["fecha-de-nacimiento"])){
+    $errorFecha = "La fecha de nacimiento es obligatoria";
+    $errores = true;
+  };
+  if($validador->estaVacio($_POST["username"])){
+    $errorUsuario = "El nombre de usuario es obligatorio";
+    $errores = true;
+  };
+  if($validador->estaVacio($_POST["password"])){
+    $errorPassword = "La contraseña es obligatoria";
+    $errores = true;
+  };
+}
 
 //validador  y al final  si no hay errores actualizar el usuario
 $errorMail = "";
@@ -18,32 +60,11 @@ $errorChequear = "";
 $usuarioEscrito = "";
 $errores = false;
 
-if($_POST){
-
-	 //traigo los usuarios de la base de datos
-    $jsonLogin = file_get_contents("usuarios.json");
-    //lo convierto a php
-    $jsonLogin = json_decode($jsonLogin, true);
-    if($_POST["email"] == ""){
-        $errorMail = "El usuario es obligatorio.";
-        $errores = true;
-    }else if(strlen($_POST["email"]) < 2){
-        $usuarioEscrito = $_POST["email"];
-        $errorMail = "El nombre debe tener al menos dos caracteres.";
-    }
-    if($_POST["password"] == ""){
-        $errorPassword = "La contraseña es obligatoria.";
-        $usuarioEscrito = $_POST["email"];
-        $errores = true;
-    }
-
     if (!$errore) {
       // actualizar el usuario
       $bd->actualizarUsuario($_POST['full_name'],$_POST['email']);
       //rediriir
       echo "Usuario actualizado.";exit;
-
-
     }
 }
 
