@@ -2,7 +2,7 @@
 <?php
 session_start();
 ?>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@ session_start();
         <section>
           <div class="row">
             <div class="col-md-12" >
-              <img src="tres.png" alt="">
+              <img src="imagenes/tres.png" alt="">
             </div>
           </div>
           <div class="row">
