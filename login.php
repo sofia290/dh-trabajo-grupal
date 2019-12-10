@@ -15,20 +15,18 @@ $usuarioEscrito = "";
 $errores = false;
 
 if($_POST){
-  include 'clases/Usuario.php';
+  include 'clases/Validador.php';
+  $validador = new Validador();
 
-  //traigo los usuarios de la base de datos
-  $jsonLogin = file_get_contents("usuarios.json");
-  //lo convierto a php
-  $jsonLogin = json_decode($jsonLogin, true);
-  if($_POST["email"] == ""){
+
+  if($validador->estaVacio($_POST["email"])){
     $errorMail = "El usuario es obligatorio.";
     $errores = true;
   }else if(strlen($_POST["email"]) < 2){
     $usuarioEscrito = $_POST["email"];
     $errorMail = "El nombre debe tener al menos dos caracteres.";
   }
-  if($_POST["password"] == ""){
+  if($validador->estaVacio($_POST["password"])){
     $errorPassword = "La contraseña es obligatoria.";
     $usuarioEscrito = $_POST["email"];
     $errores = true;

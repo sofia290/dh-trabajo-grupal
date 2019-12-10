@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-session_start();
 //si existe el indice "usuario" como cookie
 //si el usuario tiene la sesion abierta
 if(isset($_COOKIE["usuario"]) || isset($_SESSION["usuario"])){
@@ -13,6 +12,14 @@ if($_POST){
   //validacion
   $errores = false;
   $validador = new Validador();
+  $errorNombre = "";
+  $errorApellido = "";
+  $errorEmail = "";
+  $errorFecha = "";
+  $errorUsuario = "";
+  $errorPassword = "";
+
+
   if($validador->estaVacio($_POST["nombre"])){
     $errorNombre = "El nombre es obligatorio";
     $errores = true;
@@ -51,6 +58,7 @@ if($_POST){
     $password = password_hash($_POST["password"],PASSWORD_DEFAULT);
     $usuarioNuevo->setPassword($password);
     $bd->registrarUsuario($usuarioNuevo);
+    session_start();
 
     echo "Se ha registrado exitosamente";
     exit;
