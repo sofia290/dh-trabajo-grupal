@@ -57,7 +57,7 @@ CREATE TABLE `usuarios` (
   `id` smallint(6) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(50) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(60) NOT NULL,
   `email` varchar(50) NOT NULL,
   `fecha_de_nac` date NOT NULL,
   `username` varchar(20) NOT NULL,
