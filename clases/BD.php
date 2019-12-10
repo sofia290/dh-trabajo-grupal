@@ -22,15 +22,18 @@ class BD{
     $fecha = $usuario->getFechaDeNac();
     $username = $usuario->getUsername();
 
+    //CON BIND VALUE
     $consulta = $this->con->prepare("INSERT INTO usuarios (id, nombre, apellido, password, email, fecha_de_nac, username) VALUES (null, :nombre, :apellido, :password, :email,:fecha, :username)");
 
-    $consulta->bindValue('nombre', $nombre);
-    $consulta->bindValue('apellido', $apellido);
-    $consulta->bindValue('password', $password);
-    $consulta->bindValue('email', $email);
-    $consulta->bindValue('fecha', $fecha);
-    $consulta->bindValue('username', $username);
+    $consulta->bindValue('nombre', $nombre, PDO::PARAM_STR);
+    $consulta->bindValue('apellido', $apellido, PDO::PARAM_STR);
+    $consulta->bindValue('password', $password, PDO::PARAM_STR);
+    $consulta->bindValue('email', $email, PDO::PARAM_STR);
+    $consulta->bindValue('fecha', $fecha, PDO::PARAM_STR);
+    $consulta->bindValue('username', $username, PDO::PARAM_STR);
 
+
+    // SIN BIND VALUE
     /*$consulta = $this->con->prepare("INSERT INTO usuarios (id, nombre, apellido, password, email, fecha_de_nac, username) VALUES (null, $nombre, $apellido, $password, $email, $fecha, $username)");*/
     /*$consulta->bindValue('nombre', ".$usuario->getNombre()." );
     $consulta->bindValue('apellido', ".$usuario->getApellido()." );
@@ -47,20 +50,7 @@ class BD{
 }
 
 
-//<?php 
-//public function traerUsuario($id){
-      // $consulta = $this->conexion->query("SELECT * FROM usuarios WHERE id = ".$id);
-     //  $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
 
- //      return $usuario;
- //  }
-
-   //public function actualizarUsuario($nombre,$email){
-      // $consulta = $this->conexion->prepare("UPDATE usuarios SET nombre = '".$nombre."' , email = '".$email."' WHERE id = ".$_SESSION["user_id"]);
-   //    $consulta->execute();
-
- //  }
-//?>
 
 
 
