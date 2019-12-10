@@ -47,7 +47,20 @@ class BD{
 }
 
 
+//<?php 
+//public function traerUsuario($id){
+      // $consulta = $this->conexion->query("SELECT * FROM usuarios WHERE id = ".$id);
+     //  $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
 
+ //      return $usuario;
+ //  }
+
+   //public function actualizarUsuario($nombre,$email){
+      // $consulta = $this->conexion->prepare("UPDATE usuarios SET nombre = '".$nombre."' , email = '".$email."' WHERE id = ".$_SESSION["user_id"]);
+   //    $consulta->execute();
+
+ //  }
+//?>
 
 
 
