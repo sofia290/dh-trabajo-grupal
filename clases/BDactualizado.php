@@ -44,6 +44,18 @@ class BD{
     $consulta->execute();
     var_dump($usuario);
   }
+    public function traerUsuario($id){
+      $consulta = $this->con->query("SELECT * FROM usuarios WHERE id = ".$id);
+      $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
+      
+      return $usuario;
+  }
+
+  public function actualizarUsuario($nombre,$apellido,$email,$fecha){
+      $consulta = $this->con->prepare("UPDATE usuarios SET nombre = '".$nombre."' , email = '".$email."'  apellido = '".$apellido."' , email = '".$email."' ,fecha = '".$fecha."'WHERE id = ".$_SESSION["user_id"]);
+      $consulta->execute();
+      
+  }
 }
 
 
