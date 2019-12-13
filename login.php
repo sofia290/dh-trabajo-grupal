@@ -3,60 +3,79 @@
 session_start();
 //si existe el indice "usuario" como cookie
 //si el usuario tiene la sesion abierta
-if(isset($_COOKIE["usuario"]) || isset($_SESSION["usuario"])){
-  header("Location:index.php");
+/*if(isset($_COOKIE["username"])){
+    header("Location:index.php");
 
-}
+}*/
 
-$errorMail = "";
+$errorEmail = "";
 $errorPassword = "";
 $errorChequear = "";
 $usuarioEscrito = "";
 $errores = false;
 
 if($_POST){
-  include 'clases/Validador.php';
-  $validador = new Validador();
 
-
-  if($validador->estaVacio($_POST["email"])){
-    $errorMail = "El usuario es obligatorio.";
-    $errores = true;
-  }else if(strlen($_POST["email"]) < 2){
-    $usuarioEscrito = $_POST["email"];
-    $errorMail = "El nombre debe tener al menos dos caracteres.";
-  }
-  if($validador->estaVacio($_POST["password"])){
-    $errorPassword = "La contraseña es obligatoria.";
-    $usuarioEscrito = $_POST["email"];
-    $errores = true;
-  }
-  if(!$errores){
-    //los recorro
-    foreach($jsonLogin as $usuario) {
-      //pregunto si machea el email
-      if($usuario["email"]==$_POST["email"]) {
-        //pregunto si machea la contraseña
-        if( password_verify($_POST["password"],$usuario["password"])){
-          //le doy la bienvenida
-          header("Location:index.php");
-          $_SESSION["usuario"] = $usuario["nombre"];
-          //echo "<img src='".$usuario["avatar"]."'>";
+	 /*traigo los usuarios de la base de datos
+    $jsonLogin = file_get_contents("usuarios.json");
+    lo convierto a php
+    $jsonLogin = json_decode($jsonLogin, true)*/;
+    if($_POST["email"] == ""){
+        $errorEmail = "El email es obligatorio.";
+        $errores = true;
+    }else if(strlen($_POST["email"]) < 2){
+        $usuarioEscrito = $_POST["email"];
+        $errorEmail = "El nombre debe tener al menos dos caracteres.";
+    }
+    if($_POST["password"] == ""){
+        $errorPassword = "La contraseña es obligatoria.";
+        $usuarioEscrito = $_POST["email"];
+        $errores = true;
+    }
+    if(!$errores){
+      include 'clases/BD.php';
+      include 'clases/Usuario.php';
+      $BD = new BD();
+      if ($BD->existeUsuario($_POST["email"])) {
+        $usuarioId = $BD->existeUsuario($_POST["email"]);
+        $usuarioLoguearse = $BD->traerUsuario($usuarioId);
+        /*var_dump($usuarioLoguearse["password"]);
+        var_dump($_POST["password"]);*/
+        /*if (password_verify($_POST["password"], $usuarioLoguearse["password"])) {
+          echo "Login completo";
+          var_dump($usuarioLoguearse);
           exit;
+        }*/
+        if ($_POST["password"] == $usuarioLoguearse["password"]) {
+          echo "Login completo";
+          var_dump($usuarioLoguearse);
+          $_SESSION["user_id"] = $usuarioId;
+        }
+        else {
+          $errorChequear = "El usuario y/o la contraseña son invalidos";
         }
       }
-      if(isset($_POST["recordarme"])){
-        setcookie("usuario", $usuario["nombre"]);
-        //header(Location:index.php);
-        //var_dump($_COOKIE);
+
+      /*
+   		los recorro
+    	foreach($jsonLogin as $usuario) {
+      		pregunto si machea el email
+    		if($usuario["email"]==$_POST["email"]) {
+        		pregunto si machea la contraseña
+        		if( password_verify($_POST["password"],$usuario["password"])){
+               le doy la bienvenida
+    						header("Location:index.php");
+                //echo "<img src='".$usuario["avatar"]."'>";
+                exit;
+            }
+        }
+    }*/}
+        elseif (!$errores){
+        $errorChequear = "El usuario y/o la contraseña son invalidos";
+        $usuarioEscrito = $_POST["email"];
       }
 
     }
-    $errorChequear = "El usuario y/o la contraseña son invalidos";
-    $usuarioEscrito = $_POST["email"];
-  }
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -97,7 +116,7 @@ if($_POST){
                   </div>
                   <input id="email" name="email" placeholder="Ingrese su correo electrónico" type="email" class="form-control" value="<?=$usuarioEscrito?>">
                 </div>
-                <span style="color:red;"><?=$errorMail?></span>
+                <span style="color:red;"><?=$errorEmail?></span>
               </div>
               <div class="form-group">
                 <label for="contraseña">Contraseña</label> <span> <a href="olvido-password.php">¿Olvidó su contraseña?</a></span>

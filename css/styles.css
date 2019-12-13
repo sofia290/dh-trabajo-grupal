@@ -1,3 +1,13 @@
+html{
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body,html{
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+
 .page-container {
   position: relative;
   min-height: 100vh;
@@ -16,8 +26,8 @@
   background-color: rgba(14, 103, 30, 1);
   box-sizing: border-box;
   position: absolute;
-  bottom: 0;
   width: 100%;
+  bottom: 0;
   height: 18rem;
 
 }

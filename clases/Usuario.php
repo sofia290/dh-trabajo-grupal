@@ -11,12 +11,8 @@ class Usuario{
   private $puntaje = 0;
   private $fotoDePerfil;
 
-  public function __construct($nombre, $apellido, $email, $fechaDeNac, $username){
-    $this->nombre = $nombre;
-    $this->apellido = $apellido;
+  public function __construct($email){
     $this->email = $email;
-    $this->fechaDeNac = $fechaDeNac;
-    $this->username = $username;
   }
 
 
@@ -42,7 +38,6 @@ class Usuario{
   public function setId($id){
     $this->id = $id;
 
-    return $this;
   }
   public function getNombre(){
     return $this->nombre;
@@ -50,7 +45,6 @@ class Usuario{
   public function setNombre($nombre){
     $this->nombre = $nombre;
 
-    return $this;
   }
 
   public function getApellido(){
@@ -60,7 +54,6 @@ class Usuario{
   public function setApellido($apellido){
     $this->apellido = $apellido;
 
-    return $this;
   }
 
 
@@ -71,8 +64,6 @@ class Usuario{
   }
   public function setEmail($email){
     $this->email = $email;
-
-    return $this;
   }
 
   public function getPassword(){
@@ -80,10 +71,7 @@ class Usuario{
   }
   public function setPassword($password){
     $this->password = $password;
-
-    return $this;
   }
-
 
   public function getFechaDeNac(){
     return $this->fechaDeNac;
@@ -91,23 +79,21 @@ class Usuario{
   public function setFechaDeNac($fechaDeNac){
     $this->fechaDeNac = $fechaDeNac;
 
-    return $this;
   }
+
   public function getUsername(){
     return $this->username;
   }
   public function setUsername($username){
     $this->username = $username;
 
-    return $this;
   }
+
   public function getPuntaje(){
     return $this->puntaje;
   }
   public function setPuntaje($puntaje){
     $this->puntaje = $puntaje;
-
-    return $this;
   }
 
   public function getFotoDePerfil(){
@@ -116,8 +102,6 @@ class Usuario{
 
   public function setFotoDePerfil($fotoDePerfil){
     $this->fotoDePerfil = $fotoDePerfil;
-
-    return $this;
   }
 
 }

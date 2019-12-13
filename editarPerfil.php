@@ -1,87 +1,85 @@
+<!DOCTYPE html>
 <?php
 session_start();
+//echo $_SESSION["user_id"];
 
-include 'clases/BD.php';
-include 'clases/Usuario.php';
+include "clases/BD.php";
+include "clases/Usuario.php";
 
-$bd = new BD;
-//tener ojo acá por que no se cuál es el id
-$usuario = $bd->traerUsuario($_SESSION["user_id"]);
+$bd= new BD;
+$usuario=$bd-> traerUsuario($_SESSION["user_id"]);
 
-if ($_POST) {
-  if(isset($_COOKIE["usuario"]) || isset($_SESSION["usuario"])){
-    header("Location:index.php");
 
+$errores = false;
+$errorNombre = "";
+$errorApellido = "";
+$errorEmail = "";
+$errorFecha = "";
+$errorUsuario = "";
+$errorPassword = "";
+
+
+if($_POST){
+  //include_once 'clases/Usuario.php';
+  include_once 'clases/Validador.php';
+
+
+  //validacion
+  $validador = new Validador();
+  if($validador->estaVacio($_POST["nombre"])){
+    $errorNombre = "El nombre es obligatorio";
+    $errores = true;
+  };
+  if($validador->estaVacio($_POST["apellido"])){
+    $errorApellido = "El apellido es obligatorio";
+    $errores = true;
+  };
+  if($validador->estaVacio($_POST["email"])){
+    $errorEmail = "El email es obligatorio";
+    $errores = true;
   }
-  if($_POST){
-    //include_once 'clases/Usuario.php';
-    include_once 'clases/Validador.php';
-    //validacion
-    $errores = false;
-    $validador = new Validador();
-    $errorNombre = "";
-    $errorApellido = "";
-    $errorEmail = "";
-    $errorFecha = "";
-    $errorUsuario = "";
-    $errorPassword = "";
+  if($validador->tieneFormatoEmail($_POST["email"]) == false){
+    $errores = true;
+  }
+  if($validador->estaVacio($_POST["fecha-de-nacimiento"])){
+    $errorFecha = "La fecha de nacimiento es obligatoria";
+    $errores = true;
+  };
+  if($validador->estaVacio($_POST["username"])){
+    $errorUsuario = "El nombre de usuario es obligatorio";
+    $errores = true;
+  };
+  /*if($validador->estaVacio($_POST["password"])){
+    $errorPassword = "La contraseña es obligatoria";
+    $errores = true;
+  };*/
 
+  //validador  y al final  si no hay errores actualizar el usuario
 
-    if($validador->estaVacio($_POST["nombre"])){
-      $errorNombre = "El nombre es obligatorio";
-      $errores = true;
-    };
-    if($validador->estaVacio($_POST["apellido"])){
-      $errorApellido = "El apellido es obligatorio";
-      $errores = true;
-    };
-    if($validador->estaVacio($_POST["email"])){
-      $errorEmail = "El email es obligatorio";
-      $errores = true;
-    }
-    if($validador->tieneFormatoEmail($_POST["email"]) == false){
-      $errores = true;
-    }
-
-    if($validador->estaVacio($_POST["fecha-de-nacimiento"])){
-      $errorFecha = "La fecha de nacimiento es obligatoria";
-      $errores = true;
-
-    };
-    if($validador->estaVacio($_POST["username"])){
-      $errorUsuario = "El nombre de usuario es obligatorio";
-      $errores = true;
-    };
-    if($validador->estaVacio($_POST["password"])){
-      $errorPassword = "La contraseña es obligatoria";
-      $errores = true;
-    };
-    
-    if(!$errores){
-        //actualizar el usuario
-        $bd->actualizarUsuario ($_POST["nombre"], $_POST["apellido"], $_POST["email"], $_POST["fecha-de-nacimiento"], $_POST["username"]);
-        //redirigir
-        echo "Usuario actualizado.";exit;
-    }
+  if (!$errores) {
+    // actualizar el usuario
+    $bd->actualizarUsuario ($_POST["nombre"], $_POST["apellido"], $_POST["email"], $_POST["fecha-de-nacimiento"], $_POST["username"]);
+    //redirigir
+    echo "Usuario actualizado.";exit;
+    // Agregar subir foto
+  }
 }
- ?>
 
-
-<!DOCTYPE html>
-<html lang="es">
+?>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title> Editar perfil </title>
+  <title>Editar Perfil</title>
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
   <div class="page-container">
     <div class="content-wrap">
+      <?php include_once 'header.php'; ?>
       <div class="container"> <!-- Aca empieza el formulario -->
         <div class="row mt-3">
           <div class="col flexbox">
@@ -143,7 +141,7 @@ if ($_POST) {
                       <i class="fa fa-calendar"></i>
                     </div>
                   </div>
-                  <input placeholder="Introduzca su fecha de nacimiento" class="textbox-n form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="fecha-de-nacimiento" name="fecha-de-nacimiento" required="required" value="<?=$usuario['fecha']?>">
+                  <input placeholder="Introduzca su fecha de nacimiento" class="textbox-n form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="fecha-de-nacimiento" name="fecha-de-nacimiento" required="required" value="<?=$usuario['fecha_de_nac']?>">
                 </div>
               </div>
               <div class="form-group">
@@ -163,12 +161,10 @@ if ($_POST) {
             </form>
           </div>
         </div> <!-- Aca termina el formulario -->
-        <div class="row d-none">
-          <div class="col" style="width: 100%; height: 100px; background-color: green;"> <!-- Aca va el footer--> </div>
-        </div>
       </div>
-
-
+      <?php
+      include_once 'footer.php';
+      ?>
     </div>
   </div>
 </body>

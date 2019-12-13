@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
 session_start();
+include 'clases/BD.php';
+include 'clases/Usuario.php';
+$BD = new BD();
 ?>
 <html lang="es" dir="ltr">
 <head>
@@ -30,11 +33,11 @@ session_start();
             <div class="col-md-12">
               <div id="titulo">
                 <?php
-                if(isset($_SESSION["usuario"])){
+                if(isset($_SESSION["user_id"])){
                   ?>
-                  <p class="text-center">Bienvenido/a  <?=$_SESSION["usuario"]?> a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
+                  <p class="text-center">Bienvenido/a  <?= $username ?> a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
                 <?php };
-                if(isset($_SESSION["usuario"])==null){
+                if(isset($_SESSION["user_id"])==null){
                   ?>
                   <p class="text-center">Bienvenido/a a Ecopreguntas , esperamos que te diviertas probando tus conocimientos sobre la ecología.</p>
                   <?php
@@ -46,7 +49,7 @@ session_start();
             <div class="col">
               <div id="botones">
                 <?php
-                if(isset($_SESSION["usuario"])==null){
+                if(isset($_SESSION["user_id"])==null){
                   ?>
                   <a role="button" class="btn btn-success m-3" href="login.php">Iniciar sesión</a>
                   <a role="button" class="btn btn-success m-3" href="registro.php">Registrarse</a>
