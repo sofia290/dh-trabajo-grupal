@@ -22,3 +22,16 @@
    background: green;
    color: white;
  }
+
+#menu li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+
+			}
+
+#menu li:hover > ul {
+				display:block;
+        position: relative;
+        padding-top: 20px;
+}
