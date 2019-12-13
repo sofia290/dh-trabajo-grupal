@@ -7,10 +7,9 @@ include "clases/BD.php";
 include "clases/Usuario.php";
 
 $bd = new BD;
-$usuario=$bd-> traerUsuario($_SESSION["user_id"]);
-var_dump($usuario);
-if($usuario["foto_de_perfil"]!= ""){
-$foto = $usuario["foto_de_perfil"];
+$usuario= $bd-> traerUsuario($_SESSION["user_id"]);
+//var_dump($usuario);
+
 
 $errores = false;
 $errorNombre = "";

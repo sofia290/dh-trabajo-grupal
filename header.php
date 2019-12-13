@@ -34,7 +34,6 @@
                   <a class="nav-link dropdown-toggle" href="#" id="user" data-toggle="dropdown"><i class="fa fa-user-circle"></i> <?= $username  ?> </a>
                   <div class="dropdown-menu dropdown-menu-right"  aria-labelledby="user">
                     <a class="dropdown-item" href="perfil.php">Mi cuenta</a>
-                    <a class="dropdown-item" href="editarPerfil.php"> Editar perfil </a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="logout.php"> Cerrar sesión </a>
                   </div>

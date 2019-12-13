@@ -3,7 +3,7 @@
 session_start();
 //si existe el indice "usuario" como cookie
 //si el usuario tiene la sesion abierta
-if(isset($_COOKIE["username"]) || $_SESSION["user_id"]){
+if(isset($_COOKIE["username"]) || isset($_SESSION["user_id"])){
     header("Location:index.php");
 
 }
@@ -12,6 +12,7 @@ $errorEmail = "";
 $errorPassword = "";
 $errorChequear = "";
 $usuarioEscrito = "";
+$loginCompleto = "";
 $errores = false;
 
 if($_POST){
@@ -47,7 +48,7 @@ if($_POST){
           exit;
         }*/
         if ($_POST["password"] == $usuarioLoguearse["password"]) {
-          echo "Login completo";
+          $loginCompleto = "Login completo";
           $_SESSION["user_id"] = $usuarioId;
         }
         else {
@@ -95,6 +96,11 @@ if($_POST){
     <div class="content-wrap">
       <?php
       include("header.php");
+      if($loginCompleto != ""){
+        ?>
+        <h3 class="text-center"><?= $loginCompleto ?></h3> 
+        <?php exit;
+      }
       ?>
       <div class="container-fluid"> <!-- Aca empieza el formulario -->
         <div class="row mt-3">
