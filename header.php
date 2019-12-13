@@ -17,7 +17,11 @@
               $username = $bd->mostrarUsername($_SESSION["user_id"]);
               ?>
               <li><a href="logout.php"> Cerrar sesion </a></li>
-              <li><?= $username  ?>  </li>
+              <li><?= $username  ?> 
+                <ul>
+                  <li> <a href="editarPerfil.php"> Editar perfil</a></li>
+                </ul>
+            </li>
               <?php
             }
             ?>
