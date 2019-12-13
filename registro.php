@@ -6,6 +6,7 @@ $errorEmail = "";
 $errorFecha = "";
 $errorPassword = "";
 $errorUsername = "";
+$errorFoto = "";
 $nombre = "";
 $apellido = "";
 $fecha = "";
@@ -91,7 +92,7 @@ if($_POST){
       $name = $_FILES['foto_perfil']['name'];
       $ext = pathinfo($name, PATHINFO_EXTENSION);
       if($ext != "jpg" && $ext != "png" && $ext != "jpeg"){
-        echo "El formato de la imagen no es el correcto";
+        $errorFoto = "El formato de la imagen no es el correcto";
       }
       if($ext == "jpg" || $ext == "png" || $ext == "jpeg") {
         //$dir = dirname(__FILE__);
@@ -102,11 +103,11 @@ if($_POST){
       }
     }
     if($_FILES["foto_perfil"]["error"] != 'UPLOAD__ERR_OK') {
-      echo "Hubo un error al cargar la imagen";
+      $errorFoto = "Hubo un error al cargar la imagen";
     }
 
 echo "Se ha registrado exitosamente";
-//header("Location:login.php");
+header("Location:login.php");
 exit;
 }
 
@@ -174,7 +175,7 @@ exit;
                 </div>
               </div>
               <div class="form-group">
-                <label for="email"> Foto de perfil </label>
+                <label for="email"> Foto de perfil </label>  <span style="color:red;"><?=$errorFecha?></span>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
