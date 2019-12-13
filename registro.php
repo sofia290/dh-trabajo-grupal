@@ -84,29 +84,29 @@ if($_POST){
     //$usuarioNuevo->setPassword($password);
     $usuarioNuevo->setPassword($_POST["password"]);
     $usuarioId = $bd->registrarUsuario($usuarioNuevo);
-    var_dump($usuarioNuevo);
+    //var_dump($usuarioNuevo);
     session_start();
-    //c
-    //var_dump($_SESSION["user_id"]);
-    /*if($_FILES["foto_perfil"]["error"] === 'UPLOAD__ERR_OK'){
+    var_dump($_FILES);
+    if($_FILES["foto_perfil"]["error"] == 0){
       $name = $_FILES['foto_perfil']['name'];
       $ext = pathinfo($name, PATHINFO_EXTENSION);
       if($ext != "jpg" && $ext != "png" && $ext != "jpeg"){
         echo "El formato de la imagen no es el correcto";
       }
       if($ext == "jpg" || $ext == "png" || $ext == "jpeg") {
-        $fotoNombre = "avatars/imagen" . "." . $ext;
+        //$dir = dirname(__FILE__);
+        $fotoNombre = "avatars/" . $usuarioNuevo->getEmail() . "." . $ext;
         move_uploaded_file($_FILES['foto_perfil']["tmp_name"], $fotoNombre);
         $usuarioNuevo->setFotoDePerfil($fotoNombre);
-        $bd->cargarFotoDePerfil();
+        $bd->cargarFotoDePerfil($usuarioId, $fotoNombre);
       }
     }
     if($_FILES["foto_perfil"]["error"] != 'UPLOAD__ERR_OK') {
       echo "Hubo un error al cargar la imagen";
-    }*/
+    }
 
 echo "Se ha registrado exitosamente";
-header("Location:login.php");
+//header("Location:login.php");
 exit;
 }
 

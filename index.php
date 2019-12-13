@@ -3,7 +3,7 @@
 session_start();
 include 'clases/BD.php';
 include 'clases/Usuario.php';
-$BD = new BD();
+$bd = new BD();
 ?>
 <html lang="es" dir="ltr">
 <head>

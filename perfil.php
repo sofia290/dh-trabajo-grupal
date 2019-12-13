@@ -44,26 +44,26 @@
 </div>
 </form>
 </div>-->
-<form class="" action="" method="post">
-  <div class="row">
-    <div class="col-2">
-      <img src="imagenes/usuario.png" alt="" class="usuario-imagen">
-    </div>
-    <div class="col-12 col-lg-10">
-      <div class="row">
-        <div class="col-12 col-md-2">
-          <h2> Tus datos </h2>
-          <p> Nombre: </p>
-          <p> Nombre de usuario: </p>
-          <p> Correo electronico: </p>
-          <p> Fecha de nacimiento: </p>
-        </div>
-        <div class="col-12 col-md-4">
-          <a class="align-center" href="#"> Editar perfil </a>
-        </div>
-
+<div class="row">
+  <div class="col-2">
+    <img src="imagenes/usuario.png" alt="" class="usuario-imagen">
+  </div>
+  <div class="col-12 col-lg-10">
+    <div class="row">
+      <div class="col-12 col-md-2">
+        <h2> Tus datos </h2>
+        <p> Nombre: </p>
+        <p> Nombre de usuario: </p>
+        <p> Correo electronico: </p>
+        <p> Fecha de nacimiento: </p>
       </div>
-    </form>
+      <div class="col-12 col-md-4">
+        <form class="" action="editarPerfil.php" method="GET">
+          <button name="editar-Perfil" type="submit" class="align-center">Editar perfil</button>
+        </form>
+      </div>
+
+    </div>
   </div>
 
   <?php require_once 'footer.php'; ?> <!-- Aca va el footer -->

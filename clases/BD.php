@@ -36,15 +36,14 @@ class BD{
     return $this->con->lastInsertId();
   }
 
-  /*public function cargarFotoDePerfil(){
-    $name = $_FILES['foto_perfil']['name'];
-    $ext = pathinfo($name, PATHINFO_EXTENSION);
-    $foto = "avatars/" . $_POST["email"] . "." . $ext;
-    $consulta = $this->con->prepare("UPDATE usuarios  SET foto_de_perfil  VALUES (:foto) WHERE id = '". $_SESSION["user_id"] . "'");
-    $consulta->bindValue('foto', $foto, PDO::PARAM_STR);
+  public function cargarFotoDePerfil($id, $foto){
+    //$name = $_FILES['foto_perfil']['name'];
+    //$ext = pathinfo($name, PATHINFO_EXTENSION);
+    //$foto = "avatars/" . $_POST["email"] . "." . $ext;
+    $consulta = $this->con->prepare("UPDATE usuarios  SET foto_de_perfil= '". $foto . "' WHERE id = '". $id . "'");
 
     $consulta->execute();
-  }*/
+  }
 
   public function existeUsuario($email){
 

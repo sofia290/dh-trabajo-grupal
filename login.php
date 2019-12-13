@@ -35,10 +35,10 @@ if($_POST){
     if(!$errores){
       include 'clases/BD.php';
       include 'clases/Usuario.php';
-      $BD = new BD();
-      if ($BD->existeUsuario($_POST["email"])) {
-        $usuarioId = $BD->existeUsuario($_POST["email"]);
-        $usuarioLoguearse = $BD->traerUsuario($usuarioId);
+      $bd = new BD();
+      if ($bd->existeUsuario($_POST["email"])) {
+        $usuarioId = $bd->existeUsuario($_POST["email"]);
+        $usuarioLoguearse = $bd->traerUsuario($usuarioId);
         /*var_dump($usuarioLoguearse["password"]);
         var_dump($_POST["password"]);*/
         /*if (password_verify($_POST["password"], $usuarioLoguearse["password"])) {

@@ -6,9 +6,11 @@ session_start();
 include "clases/BD.php";
 include "clases/Usuario.php";
 
-$bd= new BD;
+$bd = new BD;
 $usuario=$bd-> traerUsuario($_SESSION["user_id"]);
-
+var_dump($usuario);
+if($usuario["foto_de_perfil"]!= ""){}
+$foto = $usuario["foto_de_perfil"];
 
 $errores = false;
 $errorNombre = "";
@@ -50,19 +52,35 @@ if($_POST){
     $errores = true;
   };
   /*if($validador->estaVacio($_POST["password"])){
-    $errorPassword = "La contraseña es obligatoria";
-    $errores = true;
-  };*/
+  $errorPassword = "La contraseña es obligatoria";
+  $errores = true;
+};*/
 
-  //validador  y al final  si no hay errores actualizar el usuario
-
-  if (!$errores) {
-    // actualizar el usuario
-    $bd->actualizarUsuario ($_POST["nombre"], $_POST["apellido"], $_POST["email"], $_POST["fecha-de-nacimiento"], $_POST["username"]);
-    //redirigir
-    echo "Usuario actualizado.";exit;
-    // Agregar subir foto
+//validador  y al final  si no hay errores actualizar el usuario
+if($_FILES["foto_perfil"]["error"] === 'UPLOAD__ERR_OK'){
+  $name = $_FILES['foto_perfil']['name'];
+  $ext = pathinfo($name, PATHINFO_EXTENSION);
+  if($ext != "jpg" && $ext != "png" && $ext != "jpeg"){
+    echo "El formato de la imagen no es el correcto";
   }
+  if($ext == "jpg" || $ext == "png" || $ext == "jpeg") {
+    $fotoNombre = "avatars/imagen" . "." . $ext;
+    move_uploaded_file($_FILES['foto_perfil']["tmp_name"], $fotoNombre);
+    $usuarioNuevo->setFotoDePerfil($fotoNombre);
+    $bd->cargarFotoDePerfil();
+  }
+}
+if($_FILES["foto_perfil"]["error"] != 'UPLOAD__ERR_OK') {
+  echo "Hubo un error al cargar la imagen";
+}
+if (!$errores) {
+  // actualizar el usuario
+  $bd->actualizarUsuario ($_POST["nombre"], $_POST["apellido"], $_POST["email"], $_POST["fecha-de-nacimiento"], $_POST["username"]);
+  //redirigir
+
+  echo "Usuario actualizado.";exit;
+  // Agregar subir foto
+}
 }
 
 ?>
@@ -87,7 +105,16 @@ if($_POST){
           </div>
         </div>
         <div class="row">
-          <div class="col-12 col-lg-8 offset-lg-2">
+          <div class="col-2">
+            <img src="$foto" alt="">
+            <?php /*if ($usuario["foto_de_perfil"]) {
+              ?>
+              <img src=<?=$usuario["foto_de_perfil"]?> class="usuario-imagen">
+            <?php};
+            else{*/
+             ?>
+          </div>
+          <div class="col-12 col-lg-8">
             <form action="" method="POST" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="nombre"> Nombre * </label>
@@ -130,7 +157,7 @@ if($_POST){
                       <i class="fa fa-at"></i>
                     </div>
                   </div>
-                  <input type="file" name="foto_perfil">
+                  <input type="file" name="foto_perfil" value="<?=$usuario['foto_de_perfil']?>">
                 </div>
               </div>
               <div class="form-group">
