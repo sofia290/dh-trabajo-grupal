@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-12-2019 a las 06:29:48
+-- Tiempo de generación: 13-12-2019 a las 20:44:22
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -62,8 +62,18 @@ CREATE TABLE `usuarios` (
   `fecha_de_nac` date NOT NULL,
   `username` varchar(20) NOT NULL,
   `puntaje` int(11) NOT NULL DEFAULT 0,
-  `foto_de_perfil` varchar(200) NOT NULL
+  `foto_de_perfil` varchar(200) NOT NULL,
+  `activado` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `password`, `email`, `fecha_de_nac`, `username`, `puntaje`, `foto_de_perfil`, `activado`) VALUES
+(1, 'Mariana', 'Galdo', '1234', 'marianagaldomartinez@gmail.com', '2001-06-30', 'mar', 0, 'avatars/marianagaldomartinez@gmail.com.jpg', 1),
+(2, 'Jose', 'Perez', '1234', 'juanperez@juan.com', '1989-12-03', 'jose', 0, '', 1),
+(3, 'Pablo', 'Perez', '1234', 'pablo@pablo.com', '1997-02-20', 'pablito', 0, 'avatars/pablo@pablo.com.png', 1);
 
 --
 -- Índices para tablas volcadas
@@ -110,7 +120,7 @@ ALTER TABLE `respuestas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
