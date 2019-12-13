@@ -3,10 +3,10 @@
 session_start();
 //si existe el indice "usuario" como cookie
 //si el usuario tiene la sesion abierta
-/*if(isset($_COOKIE["username"])){
+if(isset($_COOKIE["username"]) || $_SESSION["user_id"]){
     header("Location:index.php");
 
-}*/
+}
 
 $errorEmail = "";
 $errorPassword = "";

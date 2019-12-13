@@ -1,9 +1,10 @@
 #menu{
   background-color: white;
   border-bottom: 2px solid green;
-  padding: 0!important;
+  padding: 10px;
   margin: 0!important;
   width: 100%;
+  margin-top: 5px;
 }
 
 #menu ul{
@@ -31,3 +32,9 @@
 				display:block;
         position: relative;
 }
+
+#menu li :hover {
+   padding: 10px;
+   background: green;
+   color: white;
+ }

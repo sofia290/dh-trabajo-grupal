@@ -11,6 +11,7 @@ $bd = new BD();
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <title> Ecopreguntas </title>
   <link rel="shortcut icon" type="image/png" href="imagenes/recycle-solid.png">
   <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
@@ -60,121 +61,73 @@ $bd = new BD();
             </div>
           </div>
         </section>
-        <section class="subtitulos">
-            <h2 >Temáticas del juego</h2>
+        <section class="subtitulos text-center">
+          <h2 >Temáticas del juego</h2>
         </section>
         <section class="fotos">
-          <article class="col-4 ">
-              <div class="row">
-                  <div class="offset-md-4 col-md-4 offset-sm-2 col-sm-8  col-xs-12">
-                    <h4> Reciclaje</h4>
-                  </div>
-                  <div class="col-12">
-                      <img src="/imagenes/reci.jpg" alt="">
-                  </div>
+          <article class>
+            <div class="row">
+              <div class="col">
+                <h4> Reciclaje</h4>
+                <img src="imagenes/reci.jpg" alt="">
               </div>
-          </article>
-          <article class="col-4 ">
-              <div class="row">
-                  <div class="offset-md-4 col-md-4 offset-sm-2 col-sm-8  col-xs-12">
-                    <h4> Ecología</h4>
-                  </div>
-                  <div class="col-12">
-                      <img src="/imagenes/eco.jpg" alt="">
-                  </div>
+              <div class="col">
+                <h4> Ecología</h4>
+                <img src="imagenes/eco.jpg" alt="">
               </div>
-          </article>
-          <article class="col-4">
-              <div class="row">
-                  <div class="offset-md-4 col-md-4 offset-sm-2 col-sm-8  col-xs-12">
-                    <h4> Ambiente</h4>
-                  </div>
-                  <div class="col-12">
-                      <img src="/imagenes/ambi.jpg" alt="">
-                  </div>
+              <div class="col">
+                <h4> Ambiente</h4>
+                <img src="imagenes/ambi.jpg" alt="">
               </div>
+            </div>
           </article>
         </section>
-        <section class="subtitulos">
-            <h2 >Creadores</h2>
+        <section class="subtitulos text-center">
+          <h2>Creadores</h2>
         </section>
 
         <section class="fotos">
-          <article class="col-3">
+          <article>
             <div class="row">
-                <div class="offset-md-4 col-md-4  col-sm-12  col-xs-12">
-                  <h4> Sofía</h4>
-                </div>
-                <div class="col-12">
-                    <img src="/imagenes/sofi.jpg" alt="">
-                </div>
-            </div>
-          </article>
-          <article class="col-3">
-            <div class="row">
-                <div class="offset-md-4 col-md-4  col-sm-12  col-xs-12">
-                  <h4> Mariana</h4>
-                </div>
-                <div class="col-12">
-                    <img src="/imagenes/sofi.jpg" alt="">
-                </div>
-            </div>
-          </article>
-          <article class="col-3">
-            <div class="row">
-                <div class="offset-md-4 col-md-4  col-sm-12  col-xs-12">
-                  <h4> Camila </h4>
-                </div>
-                <div class="col-12">
-                    <img src="/imagenes/sofi.jpg" alt="">
-                </div>
-            </div>
-          </article>
-          <article class="col-3">
-            <div class="row">
-                <div class="offset-md-4 col-md-4  col-sm-12  col-xs-12">
-                  <h4> Emiliano</h4>
-                </div>
-                <div class="col-12">
-                    <img src="/imagenes/sofi.jpg" alt="">
-                </div>
+              <div class="col">
+                <h4> Sofía </h4>
+                <img src="imagenes/sofi.jpg" alt="">
+              </div>
+              <div class="col">
+                <h4> Camila </h4>
+                <img src="imagenes/sofi.jpg" alt="">
+              </div>
+              <div class="col">
+                <h4> Mariana </h4>
+                <img src="imagenes/sofi.jpg" alt="">
+              </div>
+              <div class="col">
+                <h4> Emiliano </h4>
+                <img src="imagenes/sofi.jpg" alt="">
+              </div>
             </div>
           </article>
         </section>
         <section class="subtitulos">
-
-            <h2>Ranking</h2>
+          <h2 class="text-center">Ranking</h2>
 
         </section>
         <section class="fotos">
-          <article class="col-4">
+          <article>
             <div class="row">
-                <div class="offset-md-3 col-md-6  col-sm-12  col-xs-12">
-                  <h4> 1* Puesto:IanMarcos</h4>
-                </div>
-                <div class="col-12">
-                    <img src="/imagenes/emiliano.jpg" alt="">
-                </div>
-            </div>
-          </article>
-          <article class="col-4">
-            <div class="row">
-                <div class="offset-md-3 col-md-6  col-sm-12  col-xs-12">
-                  <h4> 2* Puesto:AnnaMaría33</h4>
-                </div>
-                <div class="col-12">
-                    <img src="/imagenes/emiliano.jpg" alt="">
-                </div>
-            </div>
-          </article>
-          <article class="col-4">
-            <div class="row">
-                <div class=" offset-md-3 col-md-6  col-sm-12  col-xs-12">
-                  <h4> 3* Puesto:JuanCarlos22</h4>
-                </div>
-                <div class="col-12">
-                    <img src="/imagenes/emiliano.jpg" alt="">
-                </div>
+              <div class="col-12 col-lg-4">
+                <h4> 1° Puesto:ian</h4>
+                <img src="imagenes/emiliano.jpg" alt="">
+              </div>
+              <div class="col">
+                <h4> 2° Puesto:anna33</h4>
+                <img src="imagenes/emiliano.jpg" alt="">
+              </div>
+              <div class="col">
+                <h4> 3° Puesto:juan22</h4>
+                <img src="imagenes/emiliano.jpg" alt="">
+              </div>
+
             </div>
           </article>
         </section>
@@ -184,6 +137,6 @@ $bd = new BD();
   </div>
   <?php
   require_once 'linksjs.php';
-   ?>
+  ?>
 </body>
 </html>
