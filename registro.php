@@ -12,6 +12,7 @@ $apellido = "";
 $fecha = "";
 $email = "";
 $username = "";
+$foto = "";
 //si existe el indice "usuario" como cookie
 //si el usuario tiene la sesion abierta
 if(isset($_COOKIE["usuario"]) || isset($_SESSION["user_id"])){
@@ -66,6 +67,9 @@ if($_POST){
   if (!$validador->estaVacio($_POST["username"])) {
     $username = $_POST["username"];
   }
+  if (!$validador->estaVacio($_FILES['foto_perfil']['name'])) {
+    $foto = $_FILES['foto_perfil']['name'];
+  }
   if($validador->estaVacio($_POST["password"])){
     $errorPassword = "La contraseña es obligatoria";
     $errores = true;
@@ -87,7 +91,6 @@ if($_POST){
     $usuarioId = $bd->registrarUsuario($usuarioNuevo);
     //var_dump($usuarioNuevo);
     session_start();
-    var_dump($_FILES);
     if($_FILES["foto_perfil"]["error"] == 0){
       $name = $_FILES['foto_perfil']['name'];
       $ext = pathinfo($name, PATHINFO_EXTENSION);
@@ -104,6 +107,7 @@ if($_POST){
     }
     if($_FILES["foto_perfil"]["error"] != 'UPLOAD__ERR_OK') {
       $errorFoto = "Hubo un error al cargar la imagen";
+      header("Location:registro.php");
     }
 
 echo "Se ha registrado exitosamente";
@@ -118,6 +122,7 @@ exit;
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" type="image/png" href="imagenes/recycle-solid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title> Registrate </title>
@@ -182,7 +187,7 @@ exit;
                       <i class="fa fa-at"></i>
                     </div>
                   </div>
-                  <input type="file" name="foto_perfil">
+                  <input type="file" name="foto_perfil" value="<?=$foto?>">
                 </div>
               </div>
               <div class="form-group">

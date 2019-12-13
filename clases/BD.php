@@ -6,7 +6,7 @@ class BD{
   public function __construct(){
       $dsn = 'mysql:host=localhost;dbname=ecopreguntas;port=3306';
       $db_user = 'root';
-      $db_pass = 'root';
+      $db_pass = '';
       $opt = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',);
       $this->con = new PDO($dsn, $db_user, $db_pass, $opt);
     }
@@ -37,9 +37,6 @@ class BD{
   }
 
   public function cargarFotoDePerfil($id, $foto){
-    //$name = $_FILES['foto_perfil']['name'];
-    //$ext = pathinfo($name, PATHINFO_EXTENSION);
-    //$foto = "avatars/" . $_POST["email"] . "." . $ext;
     $consulta = $this->con->prepare("UPDATE usuarios  SET foto_de_perfil= '". $foto . "' WHERE id = '". $id . "'");
 
     $consulta->execute();

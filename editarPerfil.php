@@ -9,7 +9,7 @@ include "clases/Usuario.php";
 $bd = new BD;
 $usuario=$bd-> traerUsuario($_SESSION["user_id"]);
 var_dump($usuario);
-if($usuario["foto_de_perfil"]!= ""){}
+if($usuario["foto_de_perfil"]!= ""){
 $foto = $usuario["foto_de_perfil"];
 
 $errores = false;
@@ -90,6 +90,7 @@ if (!$errores) {
   <title>Editar Perfil</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="css/navbar.css">
+  <link rel="shortcut icon" type="image/png" href="imagenes/recycle-solid.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
