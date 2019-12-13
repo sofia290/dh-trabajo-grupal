@@ -195,5 +195,8 @@ if (!$errores) {
       ?>
     </div>
   </div>
+  <?php
+  require_once 'linksjs.php';
+  ?>
 </body>
 </html>

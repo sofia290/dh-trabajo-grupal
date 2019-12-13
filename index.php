@@ -1,7 +1,6 @@
 <?php session_start();
 include 'clases/BD.php';
 include 'clases/Usuario.php';
-$BD = new BD();
 $bd = new BD();
 ?>
 <html lang="es" dir="ltr">
@@ -10,8 +9,9 @@ $bd = new BD();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title> Ecopreguntas </title>
   <link rel="shortcut icon" type="image/png" href="imagenes/recycle-solid.png">
   <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
   <title></title>
@@ -182,5 +182,8 @@ $bd = new BD();
       <?php require_once 'footer.php'; ?>
     </div>
   </div>
+  <?php
+  require_once 'linksjs.php';
+   ?>
 </body>
 </html>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
 session_start();
+include 'clases/BD.php';
+include 'clases/Usuario.php';
+$bd = new BD();
 ?>
 <html lang="es">
 <head>
@@ -12,6 +15,7 @@ session_start();
   <link rel="shortcut icon" type="image/png" href="imagenes/recycle-solid.png">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <meta name="viewport" content="width=device-width initial-scale=1.0">
   <title>Preguntas frequentes</title>
 </head>
@@ -86,5 +90,8 @@ session_start();
 </footer>-->
 </div>
 </div>
+<?php
+require_once 'linksjs.php';
+?>
 </body>
 </html>

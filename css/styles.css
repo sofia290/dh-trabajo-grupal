@@ -14,7 +14,7 @@ body,html{
 }
 
 .content-wrap {
-  padding-bottom: 18rem;    /* Footer height */
+  padding-bottom: 20rem;    /* Footer height */
 }
 
 .usuario-imagen{
@@ -28,7 +28,7 @@ body,html{
   position: absolute;
   width: 100%;
   bottom: 0;
-  height: 18rem;
+  height: 20rem;
 
 }
 #footer p{

@@ -48,7 +48,6 @@ if($_POST){
         }*/
         if ($_POST["password"] == $usuarioLoguearse["password"]) {
           echo "Login completo";
-          var_dump($usuarioLoguearse);
           $_SESSION["user_id"] = $usuarioId;
         }
         else {
@@ -150,5 +149,8 @@ if($_POST){
       ?>
     </div>
   </div>
+  <?php
+  require_once 'linksjs.php';
+  ?>
 </body>
 </html>

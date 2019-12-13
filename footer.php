@@ -17,10 +17,8 @@
           <input type="text" name="correo" placeholder="Correo" value="" required>
           <textarea name="mensaje" placeholder="Escriba aquí su mensaje" required></textarea>
           <input type="button"  value="Enviar" id="boton">
-        </div>
+        </form>
       </div>
-    </form>
-  </div>
-</div>
-</footer>
+    </div>
+  </footer>
 </div>
