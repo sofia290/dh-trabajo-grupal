@@ -150,7 +150,7 @@ $bd = new BD();
           <article class="col-4">
             <div class="row">
                 <div class="offset-md-3 col-md-6  col-sm-12  col-xs-12">
-                  <h4> 1* Puesto: peron</h4>
+                  <h4> 1* Puesto:IanMarcos</h4>
                 </div>
                 <div class="col-12">
                     <img src="/imagenes/emiliano.jpg" alt="">
@@ -160,7 +160,7 @@ $bd = new BD();
           <article class="col-4">
             <div class="row">
                 <div class="offset-md-3 col-md-6  col-sm-12  col-xs-12">
-                  <h4> 2* Puesto: peron</h4>
+                  <h4> 2* Puesto:AnnaMaría33</h4>
                 </div>
                 <div class="col-12">
                     <img src="/imagenes/emiliano.jpg" alt="">
@@ -170,7 +170,7 @@ $bd = new BD();
           <article class="col-4">
             <div class="row">
                 <div class=" offset-md-3 col-md-6  col-sm-12  col-xs-12">
-                  <h4> 3* Puesto: peron</h4>
+                  <h4> 3* Puesto:JuanCarlos22</h4>
                 </div>
                 <div class="col-12">
                     <img src="/imagenes/emiliano.jpg" alt="">
